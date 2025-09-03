@@ -8,7 +8,7 @@
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:\soft\gradle-8.13" />
+        <option name="gradleHome" value="D:\worksoft\gradle-8.6" />
         <option name="gradleJvm" value="21" />
         <option name="modules">
           <set>

@@ -1,0 +1,23 @@
+/* styles.css */
+.root {
+    -fx-font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+}
+
+.button {
+    -fx-background-color: #4CAF50; /* 绿色背景 */
+    -fx-text-fill: white; /* 白色文字 */
+    -fx-font-weight: bold;
+    -fx-padding: 10 20; /* 内边距 */
+    -fx-background-radius: 5; /* 圆角 */
+}
+
+.button:hover {
+    -fx-background-color: #45a049; /* 鼠标悬停时更深的绿色 */
+}
+
+/* 为欢迎页面的VBox添加半透明背景，让文字更清晰 */
+.anchor-pane > .v-box {
+    -fx-background-color: rgba(0, 0, 0, 0.5); /* 黑色半透明背景 */
+    -fx-background-radius: 10;
+    -fx-padding: 30;
+}
