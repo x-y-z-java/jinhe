@@ -54,3 +54,19 @@ jlink {
         name = "app"
     }
 }
+
+buildscript {
+    repositories {
+        maven { url = uri("https://mirrors.huaweicloud.com/repository/maven/") }
+        google()
+        mavenCentral()
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url = uri("https://mirrors.huaweicloud.com/repository/maven/") }
+        google()
+        mavenCentral()
+    }
+}

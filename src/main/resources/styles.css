@@ -21,3 +21,97 @@
     -fx-background-radius: 10;
     -fx-padding: 30;
 }
+
+/* styles.css - 添加以下样式 */
+
+/* 探索按钮的特定样式 */
+#exploreButton {
+    -fx-background-color: #3498DB; /* 蓝色 */
+    -fx-text-fill: white;
+}
+
+#exploreButton:hover {
+    -fx-background-color: #2980B9; /* 深蓝色 */
+}
+
+/* 返回按钮的特定样式 */
+#backButton {
+    -fx-background-color: #E74C3C; /* 红色 */
+    -fx-text-fill: white;
+}
+
+#backButton:hover {
+    -fx-background-color: #C0392B; /* 深红色 */
+}
+
+/* 探索页面的特定样式 */
+.v-box {
+    -fx-background-color: #ECF0F1; /* 浅灰色背景 */
+    -fx-background-radius: 10;
+}
+
+/* 欢迎页面按钮容器样式，让按钮水平排列 */
+.v-box .button {
+    -fx-min-width: 120px;
+}
+
+/* styles.css - 添加主功能界面样式 */
+
+/* 主功能界面按钮样式 */
+#compressButton {
+    -fx-background-color: #27AE60; /* 绿色 */
+    -fx-text-fill: white;
+}
+
+#compressButton:hover {
+    -fx-background-color: #229954; /* 深绿色 */
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#analyzeButton {
+    -fx-background-color: #3498DB; /* 蓝色 */
+    -fx-text-fill: white;
+}
+
+#analyzeButton:hover {
+    -fx-background-color: #2874A6; /* 深蓝色 */
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#settingsButton {
+    -fx-background-color: #9B59B6; /* 紫色 */
+    -fx-text-fill: white;
+}
+
+#settingsButton:hover {
+    -fx-background-color: #7D3C98; /* 深紫色 */
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#helpButton {
+    -fx-background-color: #F39C12; /* 橙色 */
+    -fx-text-fill: white;
+}
+
+#helpButton:hover {
+    -fx-background-color: #D68910; /* 深橙色 */
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* 主功能界面的整体样式 */
+.main-vbox {
+    -fx-background-color: rgba(236, 240, 241, 0.9); /* 半透明浅灰色 */
+    -fx-background-radius: 15;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.5, 0, 0);
+}
+
+/* 按钮悬停动画效果 */
+.button:hover {
+    -fx-cursor: hand;
+    -fx-transition: all 0.2s;
+}

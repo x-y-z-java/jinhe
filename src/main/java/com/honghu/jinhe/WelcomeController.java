@@ -33,22 +33,44 @@ public class WelcomeController {
             // 1. 获取当前舞台（Stage）
             Stage currentStage = (Stage) startButton.getScene().getWindow();
 
-            // 2. 加载主界面的FXML文件
-            // (假设主界面FXML文件名为 main-view.fxml，我们稍后创建)
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("main-view.fxml"));
+            // 2. 加载主功能界面的FXML文件
+            FXMLLoader fxmlLoader = new FXMLLoader( getClass().getClassLoader().getResource("com/honghu/jinhe/main-view.fxml"));
             Parent root = fxmlLoader.load();
 
             // 3. 创建一个新的场景（Scene）并设置到当前舞台上
-            Scene scene = new Scene(root, 640, 480);
+            Scene scene = new Scene(root, 800, 600); // 设置更大的窗口尺寸
             currentStage.setScene(scene);
-            currentStage.setTitle("主界面");
-            // 可选：居中显示
+            currentStage.setTitle("我的应用 - 主功能界面");
             currentStage.centerOnScreen();
 
         } catch (IOException e) {
             e.printStackTrace();
-            // 在实际应用中，这里应该有一个更好的错误处理机制
-            welcomeText.setText("加载主界面时出错！");
+            welcomeText.setText("加载主功能界面时出错！");
+        }
+    }
+
+    // WelcomeController.java 中添加的新方法
+
+    // 处理跳转到探索页面的方法
+    @FXML
+    protected void onExploreButtonClick(ActionEvent event) {
+        try {
+            // 1. 获取当前舞台
+            Stage currentStage = (Stage) startButton.getScene().getWindow();
+
+            // 2. 加载探索界面的FXML文件
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("com/honghu/jinhe/explore-view.fxml"));
+            Parent root = fxmlLoader.load();
+
+            // 3. 创建新场景并设置到当前舞台
+            Scene scene = new Scene(root, 600, 400); // 可以设置不同的窗口大小
+            currentStage.setScene(scene);
+            currentStage.setTitle("我的应用 - 探索功能");
+            currentStage.centerOnScreen();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            welcomeText.setText("加载探索页面时出错！");
         }
     }
 }

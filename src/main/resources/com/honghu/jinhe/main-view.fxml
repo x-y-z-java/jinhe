@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import java.net.URL?>
+<VBox alignment="CENTER" spacing="25" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.honghu.jinhe.MainController">
+    <stylesheets>
+        <URL value="@/styles.css" />
+    </stylesheets>
+
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+    </padding>
+
+    <!-- 背景图片 - 使用新的背景 -->
+    <ImageView fitHeight="500.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@/images/main-bg.jpg"/>
+    </ImageView>
+
+    <!-- 主功能界面标题 -->
+    <Label text="主功能界面" textFill="#2C3E50" style="-fx-effect: dropshadow(gaussian, white, 10, 0.5, 0, 0);">
+        <font>
+            <Font name="System Bold" size="32.0" />
+        </font>
+    </Label>
+
+    <!-- 功能说明 -->
+    <Label text="请选择您要使用的功能" textFill="#34495E" wrapText="true" textAlignment="CENTER" />
+
+    <!-- 功能按钮容器 -->
+    <VBox alignment="CENTER" spacing="15">
+        <!-- 压缩功能按钮 -->
+        <Button fx:id="compressButton" mnemonicParsing="false" onAction="#onCompressButtonClick" text="压缩功能" style="-fx-background-color: #27AE60; -fx-text-fill: white; -fx-min-width: 150px;" />
+
+        <!-- 其他功能按钮 -->
+        <Button fx:id="analyzeButton" mnemonicParsing="false" onAction="#onAnalyzeButtonClick" text="数据分析" style="-fx-background-color: #3498DB; -fx-text-fill: white; -fx-min-width: 150px;" />
+
+        <Button fx:id="settingsButton" mnemonicParsing="false" onAction="#onSettingsButtonClick" text="系统设置" style="-fx-background-color: #9B59B6; -fx-text-fill: white; -fx-min-width: 150px;" />
+
+        <Button fx:id="helpButton" mnemonicParsing="false" onAction="#onHelpButtonClick" text="帮助文档" style="-fx-background-color: #F39C12; -fx-text-fill: white; -fx-min-width: 150px;" />
+    </VBox>
+
+    <!-- 返回按钮 -->
+    <Button fx:id="backButton" mnemonicParsing="false" onAction="#onBackButtonClick" text="返回欢迎页" style="-fx-background-color: #E74C3C; -fx-text-fill: white; -fx-min-width: 120px;" />
+
+</VBox>
