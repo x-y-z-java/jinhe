@@ -4,42 +4,35 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <?import java.net.URL?>
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.honghu.jinhe.WelcomeController">
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.honghu.jinhe.WelcomeController">
     <stylesheets>
-        <URL value="@/styles.css"/>
+        <URL value="@/styles.css" />
     </stylesheets>
 
-    <!-- 背景图片 -->
-    <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@/images/welcome-bg.jpg"/>
+    <!-- 修改点：移除百分比值，使用代码绑定来实现全屏 -->
+    <ImageView fx:id="backgroundImage" preserveRatio="false">
+        <image>
+            <Image url="@/images/welcome-bg.jpg" />
+        </image>
     </ImageView>
 
-    <!-- 主要内容容器（垂直盒子），固定在AnchorPane中央 -->
-    <VBox alignment="CENTER" layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" spacing="20"
-          AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0"
-          AnchorPane.topAnchor="100.0">
-        <!-- 欢迎标题 -->
+    <VBox alignment="CENTER" spacing="20" style="-fx-background-color: rgba(0, 0, 0, 0.5); -fx-background-radius: 10; -fx-padding: 30;">
         <Label text="欢迎使用我的应用！" textFill="WHITE">
             <font>
-                <Font name="System Bold" size="24.0"/>
+                <Font name="System Bold" size="24.0" />
             </font>
         </Label>
 
-        <!-- 欢迎信息 -->
-        <Label fx:id="welcomeText" text="这是您的JavaFX之旅的开始..." textFill="WHITE" wrapText="true"/>
+        <Label fx:id="welcomeText" text="这是您的JavaFX之旅的开始..." textFill="WHITE" wrapText="true" />
 
-        <!-- 开始按钮 -->
-        <Button fx:id="startButton" mnemonicParsing="false" onAction="#onStartButtonClick" text="开始探索"/>
+        <Button fx:id="startButton" mnemonicParsing="false" onAction="#onStartButtonClick" text="开始探索" />
 
-        <!-- 新添加的探索功能按钮 -->
-        <Button fx:id="exploreButton" mnemonicParsing="false" onAction="#onExploreButtonClick" text="添加探索功能"
-                style="-fx-background-color: #3498DB; -fx-text-fill: white;"/>
+        <Button fx:id="exploreButton" mnemonicParsing="false" onAction="#onExploreButtonClick" text="添加探索功能" style="-fx-background-color: #3498DB; -fx-text-fill: white;" />
     </VBox>
 
-</AnchorPane>
+</StackPane>

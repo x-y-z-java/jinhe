@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -28,31 +29,38 @@ public class MainController {
     @FXML
     private Button backButton;
 
-    // 压缩功能按钮点击事件
+    @FXML
+    private ImageView backgroundImage;
+
+    @FXML
+    public void initialize() {
+        // 绑定背景图片尺寸到舞台尺寸
+        if (backgroundImage != null && backgroundImage.getScene() != null) {
+            backgroundImage.fitWidthProperty().bind(backgroundImage.getScene().widthProperty());
+            backgroundImage.fitHeightProperty().bind(backgroundImage.getScene().heightProperty());
+        }
+    }
+
     @FXML
     protected void onCompressButtonClick(ActionEvent event) {
         showAlert("压缩功能", "压缩功能暂未实现，敬请期待！");
     }
 
-    // 数据分析按钮点击事件
     @FXML
     protected void onAnalyzeButtonClick(ActionEvent event) {
         showAlert("数据分析", "数据分析功能开发中...");
     }
 
-    // 系统设置按钮点击事件
     @FXML
     protected void onSettingsButtonClick(ActionEvent event) {
         showAlert("系统设置", "设置功能即将推出！");
     }
 
-    // 帮助文档按钮点击事件
     @FXML
     protected void onHelpButtonClick(ActionEvent event) {
         showAlert("帮助文档", "帮助文档正在编写中...");
     }
 
-    // 返回欢迎页按钮点击事件
     @FXML
     protected void onBackButtonClick(ActionEvent event) {
         try {
@@ -71,7 +79,6 @@ public class MainController {
         }
     }
 
-    // 显示提示信息的通用方法
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
